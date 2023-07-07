@@ -1,6 +1,6 @@
 {
   "name": "bash-ai-roided",
-  "version": "1.0.1",
+  "version": "1.0.12",
   "main": "bin/bash-ai-roided",
   "author": "screamingpanic <[axelmarora@proton.me]>",
   "bin": {
@@ -15,8 +15,8 @@
     "buildw": "nodemon --ext ts -w src --legacy-watch --exec  'tsc'",
     "preinstall": "ls -l | grep 'node_modules' && echo 'preinstall'",
     "postinstall": "npm run clean && npm run build && echo 'Installed.'",
-    "prepare": "npm run clean && npm run build && echo 'Prepared.'",
-    "prepublishOnly": "npm run clean && npm run build ",
+    "prepare": "echo 'Prepared.'",
+    "prepublishOnly": "npm run clean && npm run build && echo 'Prepublish.'",
     "preversion": "npm run clean && npm run build",
     "version": "npm run clean && npm run build",
     "postversion": "git push && git push --tags"

@@ -15,21 +15,24 @@ export class AppController {
     @Validate()
     @ErrorFilter()
     public async findCommand(_prompt: string): Promise<void> {
+        this.logger.msg("Prompt: " + _prompt);
+
         const command = await this.appService.findCommand(_prompt);
 
         if (command === "") {
-            throw new Error("command not found");
+            throw new Error("Command not found!");
         }
 
-        this.logger.log(`command: ${command}\n`);
+        this.logger.msg(`Command: ${command}\n`, true);
 
         const confirm = await this.appService.confirmCommand(command);
 
         if (!confirm) {
-            this.logger.log("command not run");
+            this.logger.log("Command couldn't run!");
             return;
         }
 
+        this.logger.msg(`Output: \n\n`);
         await this.appService.runCommand(command);
     }
 }

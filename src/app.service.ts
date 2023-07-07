@@ -47,7 +47,7 @@ export class AppService {
 
     // confirm command 
     public async confirmCommand(command: string): Promise<boolean> {
-        const question = `do your want to use command in your terminal ? [yes/no] `;
+        const question = `Run the command? [y/n] `;
         const readline = require('readline').createInterface({
             input: process.stdin,
             output: process.stdout
@@ -55,7 +55,7 @@ export class AppService {
 
         return new Promise(resolve => readline.question(question, (ans: any) => {
             // if answer is yes or empty, answer is yes
-            const answer = ans === "yes" || ans === "" ? true : false;
+            const answer = ans === "y" || ans === "yes" ? true : false;
             readline.close();
             resolve(answer);
         }));

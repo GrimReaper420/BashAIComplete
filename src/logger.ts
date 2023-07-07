@@ -1,14 +1,24 @@
+const DEV_LOGGING = false;
+
 export class Logger {
     constructor(
         private name: string
     ) { }
+
+    public msg(message: string, colored: boolean = false) {
+        if(!colored)
+            console.log(message);
+        else
+            console.info(withColor("36", `${message}`));
+    }
 
     public info(message: string) {
         console.info(withColor("36", `[${this.name}] ${message}`));
     }
 
     public log(message: string) {
-        console.log(withColor("32", `[${this.name}] ${message}`));
+        if(DEV_LOGGING)
+            console.log(withColor("32", `[${this.name}] ${message}`));
     }
 
     public error(message: string) {
@@ -20,7 +30,8 @@ export class Logger {
     }
 
     public debug(message: string) {
-        if (process.env.DEBUG === "true") console.debug(withColor("35", `[${this.name}] ${message}`));
+        if(DEV_LOGGING)
+            if (process.env.DEBUG === "true") console.debug(withColor("35", `[${this.name}] ${message}`));
     }
 }
 
