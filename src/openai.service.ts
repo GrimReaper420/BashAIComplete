@@ -3,7 +3,7 @@ import { Configuration, OpenAIApi } from "openai";
 export default class OpenAiService {
     private openai: OpenAIApi;
 
-    private model: string = "text-davinci-003";
+    private model: string = "gpt-3.5-turbo";
 
     constructor() {
         const OPENAI_API_KEY = process.env.OPENAI_API_KEY;

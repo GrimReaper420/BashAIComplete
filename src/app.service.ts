@@ -18,6 +18,8 @@ export class AppService {
     public async findCommand(_prompt: string): Promise<string> {
         const prompt = new BashPrompt(_prompt);
         const fullPrompt = prompt.toString();
+
+        this.logger.log("Full prompt:\n" + fullPrompt);
         
         try {  
             const completion = await this.openAiService.createCompletion(fullPrompt);
