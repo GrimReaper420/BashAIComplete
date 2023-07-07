@@ -32,7 +32,7 @@ export class AppController {
             return;
         }
 
-        this.logger.msg(`Output: \n\n`);
+        this.logger.msg(`Output:\n`);
         await this.appService.runCommand(command);
     }
 }

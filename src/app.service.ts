@@ -22,8 +22,12 @@ export class AppService {
         this.logger.log("Full prompt:\n" + fullPrompt);
         
         try {  
-            const completion = await this.openAiService.createCompletion(fullPrompt);
-            const result = completion.data.choices[0].text;
+            const completion = await this.openAiService.createChatCompletion(fullPrompt);
+
+            this.logger.log(completion);
+            this.logger.log(JSON.stringify(completion.data));
+
+            const result = completion.data.choices[0].message.content;
             const command: string = result.trim();
 
             // if command has ?? or !!, throw error
@@ -35,14 +39,16 @@ export class AppService {
             return command;
         } catch (error: any) {
             if (error.response) {
-            console.log(error.response.status);
-            console.log(error.response.data);
+                this.logger.error(error.response.status);
+                this.logger.error(error.response.data);
             } else {
-            console.log(error.message);
+                this.logger.error(error.message);
             }
+
+            return "";
         }
 
-        return "";
+        
     }
 
 

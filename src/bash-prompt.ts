@@ -1,3 +1,5 @@
+import { readFile } from 'fs'
+
 const environment = () => {
     // get os name
     const os = require('os');
@@ -34,9 +36,25 @@ const environment = () => {
     // get current time zone
     const timeZone = process.env.TZ;
 
-    const distributor = "Ubuntu"
-    const distributionVersion = "22.04"
+    var distribution = "Ubuntu";
+    var distributionVersion = "22.04";
 
+    readFile('/etc/os-release', 'utf8', (err, data) => {
+        if (err) throw err
+        const lines: string[] = data.split('\n');
+
+        const releaseDetails: any = {}
+        lines.forEach((line, index) => {
+            if(line == '')
+                return;
+            // Split the line into an array of words delimited by '='
+            const words: string[] = line.split('=');
+            releaseDetails[words[0].trim().toLowerCase()] = words[1].trim();
+        })
+
+        distribution = releaseDetails.id;
+        distribution = releaseDetails.version_id;
+      });
 
     const env = {
         osName,
@@ -50,8 +68,8 @@ const environment = () => {
         editor,
         language,
         timeZone,
-	distributor,
-	distributionVersion,
+        distribution,
+	    distributionVersion,
     }
 
     return Object.entries(env).map(([key, value]) => {
