@@ -19,7 +19,6 @@ export class AppService {
         const prompt = new BashPrompt(_prompt);
         const fullPrompt = prompt.toString();
         
-        console.log("Prompt: " + _prompt);
         try {  
             const completion = await this.openAiService.createCompletion(fullPrompt);
             const result = completion.data.choices[0].text;

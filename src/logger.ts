@@ -9,7 +9,7 @@ export class Logger {
         if(!colored)
             console.log(message);
         else
-            console.info(withColor("36", `${message}`));
+            console.log(withColor("36", `${message}`));
     }
 
     public info(message: string) {
