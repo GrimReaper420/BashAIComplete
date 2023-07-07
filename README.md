@@ -1,6 +1,6 @@
-# Bash AI
+# Bash AI Roided
 
-Bash AI is a command-line tool that uses the power of OpenAI's GPT-3 to provide intelligent suggestions and automation for your bash commands.
+Bash AI Roided is a fork of Bash AI. It improves on the original. Bash AI is a command-line tool that uses the power of OpenAI's GPT-3 to provide intelligent suggestions and automation for your bash commands.
 
 ![Imgur](https://imgur.com/5kGTZwv.gif)
 
@@ -9,7 +9,7 @@ Bash AI is a command-line tool that uses the power of OpenAI's GPT-3 to provide 
 You can install Bash AI via npm:
 
 ```bash
-npm install -g @markvachi/bash-ai
+npm install -g @screamingpanic/bash-ai-roided
 ```
 
 ## Usage

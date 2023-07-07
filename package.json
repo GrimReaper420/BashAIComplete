@@ -1,8 +1,8 @@
 {
   "name": "bash-ai-roided",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "bin/bash-ai-roided",
-  "author": "axelm <[maroraaxel@gmail.com]>",
+  "author": "screamingpanic <[axelmarora@proton.me]>",
   "bin": {
     "??": "bin/bash-ai-roided"
   },
@@ -38,10 +38,10 @@
     "prompt-sync": "^4.2.0",
     "ts-node-dev": "^2.0.0"
   },
-  "description": "Bash AI is a command-line tool that uses the power of OpenAI's GPT-3 to provide intelligent suggestions and automation for your bash commands.",
+  "description": "Bash AI Roided is a fork of Bash AI. It improves on the original. Bash AI is a command-line tool that uses the power of OpenAI's GPT-3 to provide intelligent suggestions and automation for your bash commands.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/M4R14/bash-ai.git"
+    "url": "git+https://github.com/GrimReaper420/BashAIRoided.git"
   },
   "keywords": [
     "gpt-3",
@@ -49,9 +49,9 @@
     "open-ai"
   ],
   "bugs": {
-    "url": "https://github.com/M4R14/bash-ai/issues"
+    "url": "https://github.com/GrimReaper420/BashAIRoided/issues"
   },
-  "homepage": "https://github.com/M4R14/bash-ai#readme",
+  "homepage": "https://github.com/GrimReaper420/BashAIRoided#readme",
   "release": {
     "branches": [
       "main"

@@ -1,8 +1,6 @@
 import { AppController } from "./app.controller";
 import { Command } from 'commander';
 
-const prompter = require("prompt-sync")({ sigint: true });
-
 // app show app version in package.json
 // $ node dist/app.js app show app version in package.json
 // $ node dist/app.js app "show app version in package.json"
