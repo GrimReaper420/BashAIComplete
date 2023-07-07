@@ -22,7 +22,7 @@ export OPENAI_API_KEY=<your-api-key>
 To use Bash AI, simply invoke it in your terminal:
 
 ```bash
-??
+?? <your request here>
 ```
 
 Bash AI will listen to your commands and provide suggestions and automation as needed.

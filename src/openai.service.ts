@@ -23,12 +23,11 @@ export default class OpenAiService {
 
     // createCompletion
     public async createCompletion(prompt: string): Promise<any> {
-        return await this.openai.createCompletion({
+        return await this.openai.createChatCompletion({
             model: this.model,
-            prompt: prompt,
-            max_tokens: 64,
+            messages: [{"role": "user", "content":prompt}],
+            max_tokens: 128,
             n: 1,
-            echo: false,
             temperature: 1,
         });
     }
