@@ -1,0 +1,33 @@
+#!/usr/bin/env node
+
+const fs = require('fs');
+const path = require('path');
+
+function copyDirectory(source_dir, dest_dir)
+{
+    if(!fs.existsSync(dest_dir))
+        fs.mkdirSync(dest_dir, { recursive: false });
+    
+    const files = fs.readdirSync(source_dir);
+    
+    files.forEach(file => {
+        const source_path = path.join(source_dir, file);
+        const destination_path = path.join(dest_dir, file);
+    
+        if(fs.statSync(source_path).isDirectory())
+            copyDirectory(source_path, destination_path);
+        else
+            fs.copyFileSync(source_path, destination_path);
+    });
+
+}
+
+const source_dir = path.join(__dirname, '../src/config');
+const dest_dir = path.join(__dirname, '../dist/config');
+
+copyDirectory(source_dir, dest_dir);
+require(path.join(__dirname, '../dist/setup/install_setup.js')).run();
+
+
+
+

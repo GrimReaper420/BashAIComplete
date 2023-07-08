@@ -59,7 +59,7 @@ const environment = () => {
     const env = {
         osName,
         osVersion,
-        files,
+        // files,
         currentDir,
         currentUser,
         homeDir,

@@ -9,15 +9,12 @@ Bash AI Roided is a fork of Bash AI. It improves on the original. Bash AI is a c
 You can install Bash AI via npm:
 
 ```bash
-npm install -g @screamingpanic/bash-ai-roided
+npm install -g @screamingpanic/bash-ai-roidedy
 ```
 
 ## Usage
 
-Before using Bash AI, you'll need to set your OpenAI API key as an environment variable:
-```bash
-export OPENAI_API_KEY=<your-api-key>
-```
+Before using Bash AI, you'll need to set your OpenAI API key. You will be prompted to enter the key during the installation. If you choose to skip entering the key during the installation stage, You will also be prompted to enter it after you make a request.
 
 To use Bash AI, simply invoke it in your terminal:
 
@@ -26,3 +23,28 @@ To use Bash AI, simply invoke it in your terminal:
 ```
 
 Bash AI will listen to your commands and provide suggestions and automation as needed.
+
+## Configuration
+
+A configuration file is created in ~/.bash-ai-roided. It contains information such as the OpenAI API key. Feel free to edit it. 
+
+## Improvements
+
+### ver 1.1.1
+#### Fixes
+
+* Changed the storage of the API key from an environment variable to a configuration file (for security reasons)
+* Updated logging and error handling
+* Reduced length of pompt by removing file list (reduces cost of using)
+
+### ver 1.1.0
+#### New features
+
+* Switch models from text-davinci-03 to gpt-3.5-turbo (reduces cost and increases performance)
+* Increase max response token count from 16 to 124 (prevents early cutoff)
+* Add linux distro information to environment (localizes output)
+
+#### Fixes
+
+* Remove promp intructions replication
+* Fix typos and formatting

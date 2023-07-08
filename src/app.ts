@@ -19,7 +19,9 @@ export function run() {
             const prompt = args.join(" ");
 
             const appController = new AppController();
-            await appController.findCommand(prompt);
+            return await appController.findCommand(prompt);
+
+            // console.log("ive arrived!");
         });
 
     program.parse(process.argv);

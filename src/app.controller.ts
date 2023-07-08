@@ -20,7 +20,8 @@ export class AppController {
         const command = await this.appService.findCommand(_prompt);
 
         if (command === "") {
-            throw new Error("Command not found!");
+            this.logger.error("Command was not received!");
+            process.exit(5);
         }
 
         this.logger.msg(`Command: ${command}\n`, true);
@@ -28,12 +29,12 @@ export class AppController {
         const confirm = await this.appService.confirmCommand(command);
 
         if (!confirm) {
-            this.logger.log("Command couldn't run!");
+            this.logger.log("OK");
             return;
         }
 
         this.logger.msg(`Output:\n`);
-        await this.appService.runCommand(command);
+        return this.appService.runCommand(command);
     }
 }
 
