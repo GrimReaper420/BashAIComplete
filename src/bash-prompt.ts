@@ -1,15 +1,15 @@
 import { readFile } from 'fs'
+import * as os from 'os';
+import * as fs from 'fs';
 
 const environment = () => {
     // get os name
-    const os = require('os');
     const osName = os.type();
 
     // get os version
     const osVersion = os.release();
 
     // list all files in current directory
-    const fs = require('fs');
     const files = fs.readdirSync('./');
 
     // get current directory
@@ -83,6 +83,7 @@ export class BashPrompt {
     ].join("\n");
 
     private answeringQuestions: string = [
+        '- each question is a request for a command to fulfill the request',
         '- write one bash command for your answer',
         '- answer must be one line',
         '- don\'t use "Answer:", only answer with the commands',
@@ -119,7 +120,7 @@ export class BashPrompt {
             this.answeringQuestions,
             "",
             "Question:",
-            `Give a command for: ${this.question}.`,
+            `Give a command for: ${this.question}`,
         ].join("\n");
     }
 

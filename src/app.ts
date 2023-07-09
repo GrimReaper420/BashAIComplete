@@ -1,5 +1,6 @@
-import { AppController } from "./app.controller";
+import { AppController } from "./app.controller.js";
 import { Command } from 'commander';
+import { Logger } from './logger.js';
 
 // app show app version in package.json
 // $ node dist/app.js app show app version in package.json
@@ -14,12 +15,16 @@ export function run() {
         .description('show app version in package.json')
         .action(async () => {
             
+
+
             // all arguments
             const args = process.argv.slice(2);
             const prompt = args.join(" ");
 
+            Logger.check_config();
+
             const appController = new AppController();
-            return await appController.findCommand(prompt);
+            await appController.findCommand(prompt);
 
             // console.log("ive arrived!");
         });

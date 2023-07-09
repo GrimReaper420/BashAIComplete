@@ -1,9 +1,22 @@
-const DEV_LOGGING = false;
+import { createRequire } from "module";
+
+const require = createRequire(import.meta.url);
+
+
+var DEV_LOGGING = false;
 
 export class Logger {
     constructor(
         private name: string
     ) { }
+
+    public static check_config()
+    {
+        const package_config_data = require('./config/package_config.json');
+        const user_config_data = require(package_config_data.user_config_json_path);
+
+        DEV_LOGGING = user_config_data.logging;
+    }
 
     public msg(message: string, colored: boolean = false) {
         if(!colored)

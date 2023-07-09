@@ -1,11 +1,12 @@
 {
   "name": "bash-ai-roided",
-  "version": "1.1.1",
-  "main": "bin/bash-ai-roided",
+  "version": "1.1.233",
+  "main": "bin/bash-ai-roided.js",
   "author": "screamingpanic <[axelmarora@proton.me]>",
   "bin": {
-    "??": "bin/bash-ai-roided"
+    "??": "bin/bash-ai-roided.js"
   },
+  "type": "module",
   "license": "MIT",
   "scripts": {
     "start": "ts-node src/app.ts",
@@ -14,13 +15,13 @@
     "build": "tsc",
     "buildw": "nodemon --ext ts -w src --legacy-watch --exec  'tsc'",
     "preinstall": "ls -l | grep 'node_modules' && echo 'preinstall'",
-    "postinstall": "./bin/install && echo 'Installed.'",
-    "prepare": "npm run clean && npm run build && echo 'Prepared.'",
-    "prepublishOnly": "echo 'Prepublish.'",
+    "postinstall": "npm run clean && npm run build && node ./bin/install.js && echo 'Installed.'",
+    "prepare": "echo 'Prepared.'",
+    "prepublishOnly": "npm run clean && echo 'Prepublish.'",
     "preversion": "npm run clean && npm run build",
     "version": "npm run clean && npm run build",
     "postversion": "git push && git push --tags",
-    "uninstall": "./bin/uninstall && echo 'Uninstalled.'"
+    "uninstall": "node ./bin/uninstall.js && npm run clean && echo 'Uninstalled.'"
   },
   "exports": {
     ".": {
@@ -30,15 +31,17 @@
     "./package.json": "./package.json"
   },
   "dependencies": {
+    "@types/fs-extra": "^11.0.1",
     "@types/node": "^18.15.11",
+    "@types/which": "^3.0.0",
     "commander": "^10.0.1",
     "fs-extra": "^11.1.1",
     "openai": "^3.2.1",
-    "which": "^3.0.1"
+    "which": "^3.0.1",
+    "prompt-sync": "^4.2.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.22",
-    "prompt-sync": "^4.2.0",
     "ts-node-dev": "^2.0.0"
   },
   "description": "Bash AI Roided is a fork of Bash AI. It improves on the original. Bash AI is a command-line tool that uses the power of OpenAI's GPT-3 to provide intelligent suggestions and automation for your bash commands.",

@@ -30,6 +30,17 @@ A configuration file is created in ~/.bash-ai-roided. It contains information su
 
 ## Improvements
 
+### ver 1.1.233
+#### Features
+
+* Adding ability to enable logging from the user configuration file (this can be used to see the full prompt sent to the API)
+
+### ver 1.1.230
+#### Fixes
+
+* A whole slew of errors have been taken take of
+* Much of under-the-hood work has been redone
+
 ### ver 1.1.1
 #### Fixes
 

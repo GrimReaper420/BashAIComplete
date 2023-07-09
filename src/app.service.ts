@@ -1,13 +1,11 @@
-import { Logger } from "./logger";
-import { BashPrompt } from "./bash-prompt";
-import OpenAiService from "./openai.service";
-import { ChildProcess } from "./child-process";
-import { CompletionException } from "./completion-exception";
+import { Logger } from "./logger.js";
+import { BashPrompt } from "./bash-prompt.js";
+import OpenAiService from "./openai.service.js";
+import { ChildProcess } from "./child-process.js";
+import { CompletionException } from "./completion-exception.js";
 import { handle_fatal_error } from './utils.js'
-
-const utils = require('./utils.js');
-
-
+import * as utils from './utils.js';
+import * as readline from 'node:readline/promises';
 
 export class AppService {
     private logger: Logger = new Logger(AppService.name);
@@ -67,16 +65,16 @@ export class AppService {
 
 
     // confirm command 
-    public async confirmCommand(command: string): Promise<boolean> {
+    public async confirmCommand(command: string): Promise<boolean | void> {
         const question = `Run the command? [y/n] `;
-        const readlinep = require('readline/promises').createInterface({
+        const rl = readline.createInterface({
             input: process.stdin,
             output: process.stdout
         });
 
-        return readlinep.question(question)
+        return rl.question(question)
             .then((ans: any) => {
-                readlinep.close();
+                rl.close();
                 return ans === "y" || ans === "yes" ? true : false;
             })
             .catch((error: any) => utils.handle_fatal_error(error));

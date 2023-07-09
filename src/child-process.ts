@@ -1,11 +1,11 @@
-import { Logger } from "./logger";
+import { Logger } from "./logger.js";
+import { spawn } from "child_process";
 
 export class ChildProcess {
     private logger: Logger = new Logger(ChildProcess.name);
 
     public run(command: string) {
         const logger = this.logger;
-        const { spawn } = require('node:child_process');
 
         const child = spawn(command, {
             shell: true,

@@ -1,8 +1,8 @@
-import { Logger } from "./logger";
-import { Validate } from "./app.validate";
-import { BashPrompt } from "./bash-prompt";
-import { AppService } from "./app.service";
-import { CompletionException } from "./completion-exception";
+import { Logger } from "./logger.js";
+import { Validate } from "./app.validate.js";
+import { BashPrompt } from "./bash-prompt.js";
+import { AppService } from "./app.service.js";
+import { CompletionException } from "./completion-exception.js";
 
 export class AppController {
     private logger: Logger = new Logger(AppController.name);

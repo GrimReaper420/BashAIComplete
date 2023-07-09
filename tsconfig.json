@@ -1,13 +1,14 @@
 {
     "compilerOptions": {
-        "target": "ES6",
-        "module": "commonjs",
+        "target": "ES2020",
+        "module": "ESNext",
         "strict": true,
         "outDir": "dist",
         "experimentalDecorators": true,
         "sourceMap": true,
         "esModuleInterop": true,
         "moduleResolution": "node",
+        "resolveJsonModule": true,
         "typeRoots": [
             "./node_modules/@types"
         ]
@@ -16,7 +17,9 @@
         "src/**/*"
     ],
     "exclude": [
-        "node_modules"
+        "node_modules",
+        "src/config/*.json",
+        "src/config/package_config.json"
     ],
     "$schema": "https://json.schemastore.org/tsconfig",
     "display": "Recommended"
