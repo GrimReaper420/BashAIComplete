@@ -1,6 +1,6 @@
 {
   "name": "bash-ai-roided",
-  "version": "1.1.233",
+  "version": "1.1.234",
   "main": "bin/bash-ai-roided.js",
   "author": "screamingpanic <[axelmarora@proton.me]>",
   "bin": {
