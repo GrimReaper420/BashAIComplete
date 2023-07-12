@@ -1,0 +1,6 @@
+{
+    "openaikey": "",
+    "logging": false,
+    "shell": "bash",
+    "use_config_shell": false
+}
