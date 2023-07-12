@@ -1,6 +1,7 @@
 import { readFile } from 'fs'
 import * as os from 'os';
 import * as fs from 'fs';
+import { UserConfiguration } from "./utils.js";
 
 const environment = () => {
     // get os name
@@ -22,7 +23,7 @@ const environment = () => {
     const homeDir = process.env.HOME;
 
     // get current user shell
-    const shell = process.env.SHELL;
+    const shell = UserConfiguration.get_config_data().use_config_shell ? UserConfiguration.get_config_data().shell : process.env.SHELL;
 
     // get current user terminal
     const terminal = process.env.TERM;

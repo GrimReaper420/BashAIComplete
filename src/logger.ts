@@ -3,7 +3,7 @@ import { createRequire } from "module";
 const require = createRequire(import.meta.url);
 
 
-var DEV_LOGGING = false;
+var DEV_LOGGING = true;
 
 export class Logger {
     constructor(

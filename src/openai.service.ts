@@ -1,7 +1,7 @@
 import { Configuration, OpenAIApi } from "openai";
 import { Logger } from './logger.js';
 import * as path from 'path';
-import * as utils from './utils.js';
+import { UserConfiguration  } from "./utils.js";
 
 export default class OpenAiService {
     private openai: OpenAIApi | undefined;
@@ -12,7 +12,7 @@ export default class OpenAiService {
 
     constructor() {
 
-        const OPENAI_API_KEY = utils.getAPIKey();
+        const OPENAI_API_KEY = UserConfiguration.get_config_data().openaikey;
         
         if(OPENAI_API_KEY)
             this.set_api_key(OPENAI_API_KEY);
@@ -49,7 +49,7 @@ export default class OpenAiService {
     public async createChatCompletion(prompt: string): Promise<any> {
         if(!this.openaikey)
         {
-            const key = utils.setAPIKeySync();
+            const key = UserConfiguration.set_api_key();
             this.set_api_key(key);
         }
 

@@ -3,8 +3,7 @@ import { BashPrompt } from "./bash-prompt.js";
 import OpenAiService from "./openai.service.js";
 import { ChildProcess } from "./child-process.js";
 import { CompletionException } from "./completion-exception.js";
-import { handle_fatal_error } from './utils.js'
-import * as utils from './utils.js';
+import { UserConfiguration, handle_fatal_error } from "./utils.js";
 import * as readline from 'node:readline/promises';
 
 export class AppService {
@@ -50,7 +49,7 @@ export class AppService {
                 // this.logger.error(JSON.stringify(error.response.data, null, 4));
 
                 if(error.response.data.error.code == 'invalid_api_key')
-                    await utils.setAPIKey();
+                   UserConfiguration.set_api_key();
 
                 process.exit(5);
             } else {
@@ -77,7 +76,7 @@ export class AppService {
                 rl.close();
                 return ans === "y" || ans === "yes" ? true : false;
             })
-            .catch((error: any) => utils.handle_fatal_error(error));
+            .catch((error: any) => handle_fatal_error(error));
     }
 
     // run command

@@ -1,5 +1,6 @@
 import { Logger } from "./logger.js";
 import { spawn } from "child_process";
+import { UserConfiguration } from "./utils.js";
 
 export class ChildProcess {
     private logger: Logger = new Logger(ChildProcess.name);
@@ -8,7 +9,7 @@ export class ChildProcess {
         const logger = this.logger;
 
         const child = spawn(command, {
-            shell: true,
+            shell:  UserConfiguration.get_config_data().use_config_shell ? UserConfiguration.get_config_data().shell : process.env.SHELL,
             stdio: 'inherit'
         });
 
