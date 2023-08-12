@@ -1,6 +1,6 @@
-# Bash AI Roided
+# Bash AI Complete
 
-Bash AI Roided is a fork of Bash AI. It improves on the original. Bash AI is a command-line tool that uses the power of OpenAI's GPT-3 to provide intelligent suggestions and automation for your bash commands.
+Bash AI Complete is a fork of Bash AI. It improves on the original. Bash AI is a command-line tool that uses the power of OpenAI's GPT-3 to provide intelligent suggestions and automation for your bash commands.
 
 ![Imgur](https://imgur.com/5kGTZwv.gif)
 
@@ -9,7 +9,7 @@ Bash AI Roided is a fork of Bash AI. It improves on the original. Bash AI is a c
 You can install Bash AI via npm:
 
 ```bash
-npm install -g @screamingpanic/bash-ai-roidedy
+npm install -g @screamingpanic/bash-ai-complete
 ```
 
 ## Usage
@@ -29,6 +29,9 @@ Bash AI will listen to your commands and provide suggestions and automation as n
 A configuration file is created in ~/.bash-ai-roided. It contains information such as the OpenAI API key. Feel free to edit it. 
 
 ## Improvements
+### ver 1.1.260
+#### Fixes
+* update README and change name to Bash AI Complete
 
 ### ver 1.1.233
 #### Features
@@ -57,5 +60,5 @@ A configuration file is created in ~/.bash-ai-roided. It contains information su
 
 #### Fixes
 
-* Remove promp intructions replication
+* Remove prompt intructions replication
 * Fix typos and formatting

@@ -1,10 +1,10 @@
 {
-  "name": "bash-ai-roided",
-  "version": "1.1.240",
-  "main": "bin/bash-ai-roided.js",
+  "name": "bash-ai-complete",
+  "version": "1.1.260",
+  "main": "bin/bash-ai-complete.js",
   "author": "screamingpanic <[axelmarora@proton.me]>",
   "bin": {
-    "??": "bin/bash-ai-roided.js"
+    "??": "bin/bash-ai-complete.js"
   },
   "type": "module",
   "license": "MIT",
@@ -44,10 +44,10 @@
     "nodemon": "^2.0.22",
     "ts-node-dev": "^2.0.0"
   },
-  "description": "Bash AI Roided is a fork of Bash AI. It improves on the original. Bash AI is a command-line tool that uses the power of OpenAI's GPT-3 to provide intelligent suggestions and automation for your bash commands.",
+  "description": "Bash AI Complete is a fork of Bash AI. It improves on the original. Bash AI is a command-line tool that uses the power of OpenAI's GPT-3 to provide intelligent suggestions and automation for your bash commands.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GrimReaper420/BashAIRoided.git"
+    "url": "git+https://github.com/GrimReaper420/BashAIComplete.git"
   },
   "keywords": [
     "gpt-3",
@@ -55,9 +55,9 @@
     "open-ai"
   ],
   "bugs": {
-    "url": "https://github.com/GrimReaper420/BashAIRoided/issues"
+    "url": "https://github.com/GrimReaper420/BashAIComplete/issues"
   },
-  "homepage": "https://github.com/GrimReaper420/BashAIRoided#readme",
+  "homepage": "https://github.com/GrimReaper420/BashAIComplete#readme",
   "release": {
     "branches": [
       "main"
